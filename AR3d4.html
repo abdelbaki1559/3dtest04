@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR.js - Display Model from Google Drive</title>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs>
+    <a-assets>
+      <!-- Lien direct vers ton fichier Google Drive -->
+      <a-asset-item id="model" src="https://drive.google.com/uc?export=download&id=1hmwmPir65eVTFwiqJ9oqMfXoFXBARUUZ"></a-asset-item>
+    </a-assets>
+
+    <!-- Entity pour charger le modèle 3D -->
+    <a-entity gltf-model="#model" scale="1 1 1" position="0 0 0"></a-entity>
+
+    <!-- QR Code pour AR.js -->
+    <a-marker preset="hiro">
+      <a-entity gltf-model="#model" scale="1 1 1" position="0 0 0"></a-entity>
+    </a-marker>
+
+    <a-camera></a-camera>
+  </a-scene>
+</body>
+</html>
